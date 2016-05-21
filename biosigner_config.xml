@@ -1,4 +1,4 @@
-<tool id="biosigner" name="Biosigner" version="2.2.1">
+<tool id="biosigner" name="Biosigner" version="2.2.2">
 	<description>Molecular signature discovery from omics data</description>
 
 	<command interpreter="Rscript">
@@ -221,7 +221,7 @@ information.txt
 Working example
 ---------------
 
-See the **W4M00001_sacurine-statistics** in the **Shared Data/Published Histories** menu
+See the **W4M00003_diaplasma** in the **Shared Data/Published Histories** menu
 
 
 
@@ -236,6 +236,11 @@ Figure output
 ----
 NEWS
 ----
+
+CHANGES IN VERSION 2.2.2
+========================
+
+Internal updates to biosigner package versions of 1.0.0 and above, and ropls versions of 1.4.0 and above (i.e. using S4 methods instead of S3)
 
 CHANGES IN VERSION 2.2.1
 ========================

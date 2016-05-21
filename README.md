@@ -3,8 +3,8 @@
 
 ### Description
 
-**Version:** 2.2.1  
-**Date:** 2015-11-18  
+**Version:** 2.2.2  
+**Date:** 2016-05-21  
 **Author:** Philippe Rinaudo and Etienne A. Thevenot (CEA, LIST, MetaboHUB, W4M Core Development Team)   
 **Email:** [etienne.thevenot(at)cea.fr](mailto:etienne.thevenot@cea.fr)  
 **Citation:** Rinaudo P., Boudah S., Junot C. and Thevenot E.A. (2015). biosigner: A new method for the discovery of restricted and stable molecular signatures from omics data. *Frontiers in Molecular Biosciences*, in review.   
@@ -31,6 +31,12 @@
 The code in the wrapper can be tested by running the **tests/biosigner_tests.R** in R  
 
 ### News
+
+##### CHANGES IN VERSION 2.2.2
+
+    o Internal updates to biosigner package versions of 1.0.0 and above, and ropls versions of 1.4.0 and above (i.e. using S4 methods instead of S3)
+    
+***
 
 ##### CHANGES IN VERSION 2.2.1
 

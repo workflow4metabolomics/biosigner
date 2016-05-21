@@ -21,8 +21,10 @@ options(stringsAsFactors = FALSE)
 
 suppressMessages(library(biosigner))
 
-if(packageVersion("biosigner") < "1.4.2")
-    cat("\nWarning: new version of the 'biosigner' package is available\n", sep="")
+if(packageVersion("biosigner") < "1.0.0")
+    stop("Please use 'biosigner' versions of 1.0.0 and above")
+if(packageVersion("ropls") < "1.4.0")
+    stop("Please use 'ropls' versions of 1.4.0 and above")
 
 ## constants
 ##----------
@@ -125,7 +127,9 @@ bsnLs <- biosign(x = xMN,
 if("seedI" %in% names(argVc) && argVc["seedI"] != "0")
     set.seed(NULL)
 
-if(!is.null(bsnLs[["tierMC"]])) {
+tierMC <- bsnLs@tierMC
+
+if(!is.null(tierMC)) {
     plot(bsnLs,
          tierMaxC = tierMaxC,
          file.pdfC = argVc["figure_tier"],
@@ -163,12 +167,12 @@ sink(argVc["information"], append = TRUE)
 tierFullVc <- c("S", LETTERS[1:5])
 tierVc <- tierFullVc[1:which(tierFullVc == tierMaxC)]
 
-if(sum(bsnLs[["tierMC"]] %in% tierVc)) {
+if(sum(tierMC %in% tierVc)) {
     cat("\nSignificant features from '", paste(tierVc, collapse = "', '"), "' tiers:\n", sep = "")
-    print(bsnLs[["tierMC"]][apply(bsnLs[["tierMC"]], 1, function(rowVc) sum(rowVc %in% tierVc) > 0), ,
+    print(tierMC[apply(tierMC, 1, function(rowVc) sum(rowVc %in% tierVc) > 0), ,
                          drop = FALSE])
     cat("\nAccuracy:\n")
-    print(round(bsnLs[["accuracyMN"]], 3))
+    print(round(getAccuracyMN(bsnLs), 3))
 } else
     cat("\nNo significant variable found for any classifier\n")
 
@@ -180,10 +184,10 @@ if(sum(bsnLs[["tierMC"]] %in% tierVc)) {
 ## Saving
 ##-------
 
-if(!is.null(bsnLs[["tierMC"]])) {
+if(!is.null(tierMC)) {
     tierDF <- data.frame(tier = sapply(rownames(varDF),
                              function(varC) {
-                                 varTirVc <- bsnLs[["tierMC"]][varC, ]
+                                 varTirVc <- tierMC[varC, ]
                                  varTirVc <- names(varTirVc)[varTirVc %in% tierVc]
                                  paste(varTirVc, collapse = "|")
                              }),
@@ -238,7 +242,7 @@ tesArgLs <- list(sacurine_all = c(respC = "gender",
                      bootI = "5",
                      pvalN = "0.05",
                      seedI = "123",
-                     .chkC = "checkEqualsNumeric(outLs[['bsnLs']][['accuracyMN']]['AS', 'randomforest'], 0.8534348, tolerance = 1e-7)"))
+                     .chkC = "checkEqualsNumeric(getAccuracyMN(outLs[['bsnLs']])['AS', 'randomforest'], 0.8534348, tolerance = 1e-7)"))
 
 for(tesC in names(tesArgLs))
     tesArgLs[[tesC]] <- c(tesArgLs[[tesC]],
