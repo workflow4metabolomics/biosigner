@@ -1,3 +1,5 @@
 archive/
 tests/.Rhistory
-tests/output/**
+tests/output/*
+*.swp
+.*.swp
