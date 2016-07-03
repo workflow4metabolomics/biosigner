@@ -1,7 +1,13 @@
 <tool id="biosigner" name="Biosigner" version="2.2.2">
 	<description>Molecular signature discovery from omics data</description>
 
-	<command interpreter="Rscript">
+	<requirements>
+		<requirement type="package" version="3.2.2">R</requirement>
+		<requirement type="package">r-batch</requirement>
+		<requirement type="package">bioconductor-biosigner</requirement>
+	</requirements>
+
+	<command>
 	biosigner_wrapper.R
 	
 		dataMatrix_in "$dataMatrix_in"
@@ -61,7 +67,22 @@
 	<data name="information" label="${tool.name}__information.txt" format="txt"/>
   </outputs>
   
-  
+  <tests>
+	  <test>
+		  <param name="dataMatrix_in" value="test-data/dataMatrix.tsv"/>
+		  <param name="sampleMetadata_in" value="test-data/sampleMetadata.tsv"/>
+		  <param name="variableMetadata_in" value="test-data/variableMetadata.tsv"/>
+		  <param name="respC" value="gender"/>
+		  <param name="advCpt.opcC" value="full"/>
+		  <param name="advCpt.methodC" value="all"/>
+		  <param name="advCpt.bootI" value="5"/>
+		  <param name="advCpt.tierC" value="S"/>
+		  <param name="advCpt.pvalN" value="0.05"/>
+		  <param name="advCpt.seedI" value="123"/>
+		  <output name="variableMetadata_out" file="test-data/variableMetadata.out"/>
+	  </test>
+  </tests>
+
   <help>	
 
 .. class:: infomark
@@ -248,4 +269,7 @@ CHANGES IN VERSION 2.2.1
 Creation of the tool
 
   </help>
+
+  <citations/>
+
 </tool>
