@@ -41,6 +41,7 @@
 			<option value="default" selected="true">Use default</option>
 			<option value="full">Full parameter list</option>
 		</param>
+		<when value="default"/>
 		<when value="full">
             <param name="methodC" label="Classification method(s)" type="select" help="">
                 <option value="all" selected="true">all</option>
