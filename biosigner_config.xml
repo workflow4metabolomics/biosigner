@@ -7,8 +7,8 @@
 		<requirement type="package">bioconductor-biosigner</requirement>
 	</requirements>
 
-	<command>
-	biosigner_wrapper.R
+	<command><![CDATA[
+	$__tool_directory__/biosigner_wrapper.R
 	
 		dataMatrix_in "$dataMatrix_in"
 		sampleMetadata_in "$sampleMetadata_in"
@@ -28,7 +28,7 @@
 		figure_tier "$figure_tier"
         figure_boxplot "$figure_boxplot"
 		information "$information"
-	</command>
+		]]></command>
 
 	<inputs>
 		<param name="dataMatrix_in" label="Data matrix file" type="data" format="tabular" help="variable x sample, decimal: '.', missing: NA, mode: numerical, sep: tabular" />
@@ -74,12 +74,12 @@
 		  <param name="sampleMetadata_in" value="sampleMetadata.tsv"/>
 		  <param name="variableMetadata_in" value="variableMetadata.tsv"/>
 		  <param name="respC" value="gender"/>
-		  <param name="advCpt.opcC" value="full"/>
-		  <param name="advCpt.methodC" value="all"/>
-		  <param name="advCpt.bootI" value="5"/>
-		  <param name="advCpt.tierC" value="S"/>
-		  <param name="advCpt.pvalN" value="0.05"/>
-		  <param name="advCpt.seedI" value="123"/>
+		  <param name="opcC" value="full"/>
+		  <param name="methodC" value="all"/>
+		  <param name="bootI" value="5"/>
+		  <param name="tierC" value="S"/>
+		  <param name="pvalN" value="0.05"/>
+		  <param name="seedI" value="123"/>
 		  <output name="variableMetadata_out" file="variableMetadata.out"/>
 	  </test>
   </tests>
