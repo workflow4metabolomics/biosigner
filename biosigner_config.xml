@@ -70,9 +70,9 @@
   
   <tests>
 	  <test>
-		  <param name="dataMatrix_in" value="test-data/dataMatrix.tsv"/>
-		  <param name="sampleMetadata_in" value="test-data/sampleMetadata.tsv"/>
-		  <param name="variableMetadata_in" value="test-data/variableMetadata.tsv"/>
+		  <param name="dataMatrix_in" value="dataMatrix.tsv"/>
+		  <param name="sampleMetadata_in" value="sampleMetadata.tsv"/>
+		  <param name="variableMetadata_in" value="variableMetadata.tsv"/>
 		  <param name="respC" value="gender"/>
 		  <param name="advCpt.opcC" value="full"/>
 		  <param name="advCpt.methodC" value="all"/>
@@ -80,7 +80,7 @@
 		  <param name="advCpt.tierC" value="S"/>
 		  <param name="advCpt.pvalN" value="0.05"/>
 		  <param name="advCpt.seedI" value="123"/>
-		  <output name="variableMetadata_out" file="test-data/variableMetadata.out"/>
+		  <output name="variableMetadata_out" file="variableMetadata.out"/>
 	  </test>
   </tests>
 
