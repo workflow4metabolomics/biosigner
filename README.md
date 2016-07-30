@@ -7,8 +7,8 @@ Status: [![Build Status](https://travis-ci.org/workflow4metabolomics/biosigner.s
 
 ## Description
 
-**Version:** 2.2.2  
-**Date:** 2016-05-21  
+**Version:** 2.2.4  
+**Date:** 2016-07-30   
 **Author:** Philippe Rinaudo and Etienne A. Thevenot (CEA, LIST, MetaboHUB, W4M Core Development Team)   
 **Email:** [etienne.thevenot(at)cea.fr](mailto:etienne.thevenot@cea.fr)  
 **Citation:** Rinaudo P., Boudah S., Junot C. and Thevenot E.A. (2015). biosigner: A new method for the discovery of restricted and stable molecular signatures from omics data. *Frontiers in Molecular Biosciences*, in review.   
@@ -33,6 +33,10 @@ The code in the wrapper can be tested by running the `tests/biosigner_tests.R` i
 
 ## News
 
+## CHANGES IN VERSION 2.2.4
+
+ * Internal updates for planemo and travis validation
+ 
 ## CHANGES IN VERSION 2.2.2
 
  * Internal updates to biosigner package versions of 1.0.0 and above, and ropls versions of 1.4.0 and above (i.e. using S4 methods instead of S3)
