@@ -1,5 +1,6 @@
 archive/
 tests/.Rhistory
 tests/output/**.swp
+*.swp
 .*.swp
 tool_test_output.*
