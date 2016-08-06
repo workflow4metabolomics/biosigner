@@ -5,9 +5,6 @@ library(batch) ## parseCommandArgs
 argVc <- unlist(parseCommandArgs(evaluate=FALSE))
 
 
-#### Start_of_tested_code  <- function() {}
-
-
 ##------------------------------
 ## Initializing
 ##------------------------------
@@ -172,7 +169,8 @@ tierVc <- tierFullVc[1:which(tierFullVc == tierMaxC)]
 if(sum(tierMC %in% tierVc)) {
     cat("\nSignificant features from '", paste(tierVc, collapse = "', '"), "' tiers:\n", sep = "")
     print(tierMC[apply(tierMC, 1, function(rowVc) sum(rowVc %in% tierVc) > 0), ,
-                         drop = FALSE])
+                 drop = FALSE])
+
     cat("\nAccuracy:\n")
     print(round(getAccuracyMN(bsnLs), 3))
 } else
@@ -221,10 +219,6 @@ cat("\nEnd of '", modNamC, "' Galaxy module call: ",
 sink()
 
 options(stringsAsFactors = strAsFacL)
-
-
-#### End_of_tested_code <- function() {}
-
 
 rm(list = ls())
 

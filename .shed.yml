@@ -1,4 +1,4 @@
-categories: [Metabolomics]
+categories: [Metabolomics][Transcriptomics][Proteomics][Statistics]
 description: '[W4M][Metabolomics][LC-MS][GC-MS][NMR] Discovery of significant signatures from omics data.'
 homepage_url: http://workflow4metabolomics.org
 long_description: 'High-throughput, non-targeted, technologies such as transcriptomics, proteomics and metabolomics, are widely used to "discover molecules" which allow to efficiently discriminate between biological or clinical conditions of interest (e.g., disease vs control states). Powerful "machine learning" approaches such as Partial Least Square Discriminant Analysis (PLS-DA), Random Forest (RF) and Support Vector Machines (SVM) have been shown to achieve high levels of prediction accuracy.

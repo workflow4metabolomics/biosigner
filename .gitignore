@@ -1,5 +1,7 @@
-archive/
-tests/.Rhistory
-tests/output/**.swp
-.*.swp
+runit/output/
 tool_test_output.*
+.#*
+\#*#
+*~
+.swp
+.*.swp
