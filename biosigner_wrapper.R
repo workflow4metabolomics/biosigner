@@ -3,8 +3,33 @@
 
 library(batch) ## parseCommandArgs
 
-argVc <- unlist(parseCommandArgs(evaluate=FALSE))
+# Constants
+argv <- commandArgs(trailingOnly = FALSE)
+script.path <- sub("--file=","",argv[grep("--file=",argv)])
+prog.name <- basename(script.path)
 
+# Print help
+if (length(grep('-h', argv)) >0) {
+	cat("Usage:", prog.name,
+	    "dataMatrix_in myDataMatrix.tsv",
+	    "sampleMetadata_in mySampleData.tsv",
+	    "variableMetadata_in myVariableMetadata.tsv",
+		"respC ...",
+  		"methodC ...",
+  		"bootI ...",
+  		"tierC ...",
+  		"pvalN ...",
+  		"seedI ...",
+	    "variableMetadata_out myVariableMetadata_out.tsv",
+	    "figure_tier figure_tier.pdf",
+	    "figure_boxplot figure_boxplot.pdf",
+	    "information information.txt",
+		"\n")
+	quit(status = 0)
+}
+
+# Parse all arguments
+argVc <- unlist(parseCommandArgs(evaluate=FALSE))
 
 ##------------------------------
 ## Initializing
