@@ -1,4 +1,4 @@
-<tool id="biosigner" name="Biosigner" version="2.2.6">
+<tool id="biosigner" name="Biosigner" version="2.2.7">
   <description>Molecular signature discovery from omics data</description>
   
   <requirements>
