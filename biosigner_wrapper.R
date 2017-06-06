@@ -1,34 +1,13 @@
-#!/usr/bin/env Rscript
+#!/usr/bin/Rscript --vanilla --slave --no-site-file
+
 
 library(batch) ## parseCommandArgs
 
-# Constants
-argv <- commandArgs(trailingOnly = FALSE)
-script.path <- sub("--file=","",argv[grep("--file=",argv)])
-prog.name <- basename(script.path)
-
-# Print help
-if (length(grep('-h', argv)) >0) {
-	cat("Usage:", prog.name,
-	    "dataMatrix_in myDataMatrix.tsv",
-	    "sampleMetadata_in mySampleData.tsv",
-	    "variableMetadata_in myVariableMetadata.tsv",
-		"respC ...",
-  		"methodC ...",
-  		"bootI ...",
-  		"tierC ...",
-  		"pvalN ...",
-  		"seedI ...",
-	    "variableMetadata_out myVariableMetadata_out.tsv",
-	    "figure_tier figure_tier.pdf",
-	    "figure_boxplot figure_boxplot.pdf",
-	    "information information.txt",
-		"\n")
-	quit(status = 0)
-}
-
-# Parse all arguments
 argVc <- unlist(parseCommandArgs(evaluate=FALSE))
+
+
+#### Start_of_tested_code  <- function() {}
+
 
 ##------------------------------
 ## Initializing
@@ -156,13 +135,15 @@ tierMC <- bsnLs@tierMC
 if(!is.null(tierMC)) {
     plot(bsnLs,
          tierMaxC = tierMaxC,
-         file.pdfC = argVc["figure_tier"],
+         file.pdfC = "figure_tier.pdf",
          .sinkC = argVc["information"])
+    file.rename("figure_tier.pdf", argVc["figure_tier"])
     plot(bsnLs,
          tierMaxC = tierMaxC,
          typeC = "boxplot",
-         file.pdfC = argVc["figure_boxplot"],
+         file.pdfC = "figure_boxplot.pdf",
          .sinkC = argVc["information"])
+    file.rename("figure_boxplot.pdf", argVc["figure_boxplot"])
 } else {
     pdf(argVc["figure_tier"])
     plot(1, bty = "n", type = "n",
@@ -194,8 +175,7 @@ tierVc <- tierFullVc[1:which(tierFullVc == tierMaxC)]
 if(sum(tierMC %in% tierVc)) {
     cat("\nSignificant features from '", paste(tierVc, collapse = "', '"), "' tiers:\n", sep = "")
     print(tierMC[apply(tierMC, 1, function(rowVc) sum(rowVc %in% tierVc) > 0), ,
-                 drop = FALSE])
-
+                         drop = FALSE])
     cat("\nAccuracy:\n")
     print(round(getAccuracyMN(bsnLs), 3))
 } else
@@ -241,20 +221,12 @@ write.table(varDF,
 cat("\nEnd of '", modNamC, "' Galaxy module call: ",
     as.character(Sys.time()), "\n", sep = "")
 
-cat("\n\n\n============================================================================")
-cat("\nAdditional information about the call:\n")
-cat("\n1) Parameters:\n")
-print(cbind(value = argVc))
-
-cat("\n2) Session Info:\n")
-
-print(sessionInfo())
-
-cat("============================================================================\n")
-
 sink()
 
 options(stringsAsFactors = strAsFacL)
 
-rm(list = ls())
 
+#### End_of_tested_code <- function() {}
+
+
+rm(list = ls())
