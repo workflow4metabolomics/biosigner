@@ -6,9 +6,6 @@ library(batch) ## parseCommandArgs
 argVc <- unlist(parseCommandArgs(evaluate=FALSE))
 
 
-#### Start_of_tested_code  <- function() {}
-
-
 ##------------------------------
 ## Initializing
 ##------------------------------
@@ -221,12 +218,25 @@ write.table(varDF,
 cat("\nEnd of '", modNamC, "' Galaxy module call: ",
     as.character(Sys.time()), "\n", sep = "")
 
+cat("\n\n\n============================================================================")
+
+cat("\nAdditional information about the call:\n")
+
+cat("\n1) Parameters:\n")
+print(cbind(value = argVc))
+
+cat("\n2) Session Info:\n")
+sessioninfo <- sessionInfo()
+cat(sessioninfo$R.version$version.string,"\n")
+cat("Main packages:\n")
+for (pkg in names(sessioninfo$otherPkgs)) { cat(paste(pkg,packageVersion(pkg)),"\t") }; cat("\n")
+cat("Other loaded packages:\n")
+for (pkg in names(sessioninfo$loadedOnly)) { cat(paste(pkg,packageVersion(pkg)),"\t") }; cat("\n")
+
+cat("============================================================================\n")
+
 sink()
 
 options(stringsAsFactors = strAsFacL)
-
-
-#### End_of_tested_code <- function() {}
-
 
 rm(list = ls())
