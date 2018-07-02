@@ -19,7 +19,7 @@ variableMetadata	msiLevel	hmdb	chemicalClass	gender_tier_S
 3,3-Dimethylglutaric acid	1	HMDB02441	Lipids	
 3,4-Dihydroxybenzeneacetic acid	1	HMDB01336	AroHoM	
 3,5-dihydroxybenzoic acid/3,4-dihydroxybenzoic acid	2		AroHoM	
-3,7-Dimethyluric acid	1	HMDB01982	AroHeP	
+3,7-Dimethyluric acid	1	HMDB01982	AroHeP	svm
 4-Acetamidobutanoic acid isomer 2	2		Lipids	
 4-Acetamidobutanoic acid isomer 3	2		Lipids	
 4-Hydroxybenzoic acid	1	HMDB00500	AroHoM	
@@ -29,8 +29,8 @@ variableMetadata	msiLevel	hmdb	chemicalClass	gender_tier_S
 6-(2-hydroxyethoxy)-6-oxohexanoic acid	2		Organi	
 6-(carboxymethoxy)-hexanoic acid	2		Organi	
 9-Methylxanthine	2	HMDB59716	AroHeP	
-Acetaminophen glucuronide	1	HMDB10316	Carboh	
-Acetylphenylalanine	1	HMDB00512	AA-pep	plsda
+Acetaminophen glucuronide	1	HMDB10316	Carboh	svm
+Acetylphenylalanine	1	HMDB00512	AA-pep	plsda|svm
 alpha-N-Phenylacetyl-glutamine	1	HMDB06344	AA-pep	plsda
 Aminosalicyluric acid	2		AA-pep:AcyGly	
 Asp-Leu/Ile isomer 1	2		AA-pep	
@@ -75,8 +75,8 @@ N-Acetylisoleucine	1		AA-pep
 N-Acetylleucine	1	HMDB11756	AA-pep	
 N-Acetyltryptophan	1	HMDB13713	AA-pep	
 N-Acetyltryptophan isomer 3	2		AA-pep	
-N2-Acetylaminoadipic acid	2		AA-pep	
-N4-Acetylcytidine	1	HMDB05923	Nucleo	
+N2-Acetylaminoadipic acid	2		AA-pep	svm
+N4-Acetylcytidine	1	HMDB05923	Nucleo	svm
 Nicotinuric acid isomer	2		AA-pep	
 Ortho-Hydroxyphenylacetic acid	1	HMDB00669	AroHoM	
 Oxoglutaric acid	2	HMDB00208	Organi	plsda|randomforest|svm
@@ -84,7 +84,7 @@ p-Anisic acid	1	HMDB01101	AroHoM	plsda|randomforest|svm
 p-Hydroxyhippuric acid	2	HMDB13678	AA-pep:AcyGly	
 p-Hydroxymandelic acid	1	HMDB00822	AroHoM	
 p-Hydroxyphenylacetic acid	1	HMDB00020	AroHoM	
-Pantothenic acid	1	HMDB00210	AliAcy	plsda
+Pantothenic acid	1	HMDB00210	AliAcy	plsda|svm
 Pentose	2		Carboh	
 Phe-Tyr-Asp (and isomers)	2		AA-pep	plsda
 Porphobilinogen	1	HMDB00245	Organi	
@@ -92,7 +92,7 @@ Pyridoxic acid isomer 1	2		AroHeM
 Pyridylacetylglycine	2	HMDB59723	AA-pep:AcyGly:Xenobi	
 Pyrocatechol sulfate	2	HMDB59724	AroHoM	
 Pyroglutamic acid	1	HMDB00267	AliHeM	
-Pyrroledicarboxylic acid	2		AroHeM	
+Pyrroledicarboxylic acid	2		AroHeM	svm
 Pyruvic acid	1	HMDB00243	Organi	
 Quinic acid	1	HMDB03072	AliHoM	
 Salicylic acid	1	HMDB01895	AroHoM:Xenobi	
