@@ -3,7 +3,7 @@ before_install:
  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
  - sudo apt-get update
  - sudo apt-get install -y --no-install-recommends r-base ant python-virtualenv
- - sudo R -e "install.packages('batch', dependencies = TRUE, repos = 'https://cloud.r-project.org/')"
+ - sudo R -e "install.packages(c('batch', 'randomForest'), dependencies = TRUE, repos = 'https://cloud.r-project.org/')"
  - sudo R -e "source('http://bioconductor.org/biocLite.R') ; biocLite('biosigner')"
  - virtualenv planemo-venv
  - . planemo-venv/bin/activate
