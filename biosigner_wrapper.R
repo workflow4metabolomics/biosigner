@@ -72,12 +72,14 @@ cat("\nStart of the '", modNamC, "' Galaxy module call: ",
 
 xMN <- t(as.matrix(read.table(argVc["dataMatrix_in"],
                               check.names = FALSE,
+                              comment.char = '',
                               header = TRUE,
                               row.names = 1,
                               sep = "\t")))
 
 samDF <- read.table(argVc["sampleMetadata_in"],
                     check.names = FALSE,
+                    comment.char = '',
                     header = TRUE,
                     row.names = 1,
                     sep = "\t")
@@ -85,6 +87,7 @@ flgF("identical(rownames(xMN), rownames(samDF))", txtC = "Sample names (or numbe
 
 varDF <- read.table(argVc["variableMetadata_in"],
                     check.names = FALSE,
+                    comment.char = '',
                     header = TRUE,
                     row.names = 1,
                     sep = "\t")
