@@ -1,6 +1,10 @@
 before_install:
- - sudo apt-get install -y ant
- - sudo apt-get install -y python-virtualenv
+ - sudo sed -i -e '$adeb http://cran.univ-paris1.fr/bin/linux/ubuntu trusty/' /etc/apt/sources.list
+ - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+ - sudo apt-get update
+ - sudo apt-get install -y --no-install-recommends r-base ant python-virtualenv gfortran g++
+ - sudo R -e "install.packages(c('batch', 'randomForest'), dependencies = TRUE, repos = 'https://cloud.r-project.org/')"
+ - sudo R -e "source('http://bioconductor.org/biocLite.R') ; biocLite('biosigner')"
  - virtualenv planemo-venv
  - . planemo-venv/bin/activate
  - pip install --upgrade pip setuptools
