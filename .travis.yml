@@ -2,8 +2,8 @@ language: r
 cache: packages
 
 before_install:
- - sudo R -e "install.packages(c('batch'), dependencies = TRUE, repos = 'https://cloud.r-project.org/')"
- - sudo R -e 'source("http://bioconductor.org/biocLite.R") ; biocLite("biosigner")'
+ - R -e "install.packages(c('batch'), dependencies = TRUE, repos = 'https://cloud.r-project.org/')"
+ - R -e 'source("http://bioconductor.org/biocLite.R") ; biocLite("biosigner")'
  - sudo apt-get install -y python-virtualenv
 
 script:
