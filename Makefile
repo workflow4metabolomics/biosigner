@@ -36,4 +36,4 @@ clean:
 	$(RM) -r planemo-venv
 	$(RM) -r planemotest.log
 
-.PHONY: all clean test planemo-lint planemo-test planemon-install planemo-toolshed-diff planemo-toolshed-update planemo-testtoolshed-diff planemo-testtoolshed-update
+.PHONY: all clean test planemolint planemotest planemon-install planemo-toolshed-diff planemo-toolshed-update planemo-testtoolshed-diff planemo-testtoolshed-update testvenv
