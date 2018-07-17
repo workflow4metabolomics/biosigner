@@ -5,6 +5,9 @@ all:
 test:
 	$(MAKE) -C $@
 
+testvenv: # For Travis-CI, to be run after planemotest
+	. planemo-venv/bin/activate && $(MAKE) -C $@
+
 planemo-venv/bin/planemo: planemo-venv
 	. planemo-venv/bin/activate && pip install --upgrade pip setuptools
 	. planemo-venv/bin/activate && pip install planemo
