@@ -2,5 +2,7 @@ env:
     - PLANEMO=yes
     - PLANEMO=
     
+sudo: required
+
 script:
  - ./travis-tests
