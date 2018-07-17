@@ -6,7 +6,7 @@ test:
 	$(MAKE) -C $@
 
 testvenv: # For Travis-CI, to be run after planemotest
-	. planemo-venv/bin/activate && $(MAKE) -C $@
+	. planemo-venv/bin/activate && $(MAKE) -C test
 
 planemo-venv/bin/planemo: planemo-venv
 	. planemo-venv/bin/activate && pip install --upgrade pip setuptools
@@ -39,4 +39,4 @@ clean:
 	$(RM) -r planemo-venv
 	$(RM) -r planemotest.log
 
-.PHONY: all clean test planemo-lint planemo-test planemon-install planemo-toolshed-diff planemo-toolshed-update planemo-testtoolshed-diff planemo-testtoolshed-update
+.PHONY: all clean test planemolint planemotest planemon-install planemo-toolshed-diff planemo-toolshed-update planemo-testtoolshed-diff planemo-testtoolshed-update testvenv
