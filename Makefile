@@ -1,5 +1,3 @@
-export BIODB_CACHE_DIRECTORY=$(CURDIR)/lcms.biodb.cache
-
 all:
 
 test:
