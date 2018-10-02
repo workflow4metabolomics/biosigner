@@ -2,8 +2,8 @@
   <description>Molecular signature discovery from omics data</description>
   
   <requirements>
-    <requirement type="package">r-batch</requirement>
-    <requirement type="package">bioconductor-biosigner</requirement>
+    <requirement type="package" version="1.1_4">r-batch</requirement>
+    <requirement type="package" version="1.6.0">bioconductor-biosigner</requirement>
   </requirements>
   
   <stdio>
