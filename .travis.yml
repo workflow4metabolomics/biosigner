@@ -1,8 +1,7 @@
-env:
-    - PLANEMO=yes
-    - PLANEMO=
-    
-sudo: required
-
-script:
- - ./travis-tests
+matrix:
+    include:
+        - name: "Plain file database tests"
+          language: r
+          r: release
+          install: ./travis_install_deps.sh
+          script: DATABASES=file make test
