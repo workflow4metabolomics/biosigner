@@ -4,4 +4,4 @@ matrix:
           language: r
           r: release
           install: ./travis_install_deps.sh
-          script: DATABASES=file make test
+          script: make test
