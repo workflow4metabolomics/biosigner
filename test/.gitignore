@@ -1,2 +1,4 @@
 output*.tsv
 *.pdf
+information.txt
+run_same_test_as_Galaxy_XML_outputVariableMetadata.tsv
