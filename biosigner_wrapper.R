@@ -30,6 +30,8 @@ if (length(grep('-h', argv)) >0) {
 
 # Parse all arguments
 argVc <- unlist(parseCommandArgs(evaluate=FALSE))
+if ( ! 'information' %in% names(argVc))
+	argVc[['information']] <- 'information.txt'
 
 ##------------------------------
 ## Initializing
